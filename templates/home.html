@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diamond Price Prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-info">
+    <div class="container">
+      <h1 class="display-1 text-center">Diamond Price Prediction</h1>
+      <br />
+      <div class="row">
+        <div class="col-8">
+          <form
+            action="/predict"
+            method="POST"
+            class="bg-primary p-3 mb-2 rounded border border-danger"
+          >
+            <div class="row">
+              <div class="col-4">
+                <label for="carat" class="form-label text-light"
+                  >Carat:</label
+                >
+                <input
+                  type="number"
+                  name="carat"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="cut" class="form-label text-light">Cut:</label>
+                <input
+                  type="text"
+                  name="cut"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="color" class="form-label text-light"
+                  >Color:</label
+                >
+                <input
+                  type="text"
+                  name="color"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="clarity" class="form-label text-light"
+                  >Clarity:</label
+                >
+                <input
+                  type="text"
+                  name="clarity"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="depth" class="form-label text-light"
+                  >Depth:</label
+                >
+                <input
+                  type="number"
+                  name="depth"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="table" class="form-label text-light"
+                  >Table:</label
+                >
+                <input
+                  type="number"
+                  name="table"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label for="x" class="form-label text-light"
+                  >X:</label
+                >
+                <input
+                  type="number"
+                  name="x"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="y" class="form-label text-light"
+                  >Y:</label
+                >
+                <input
+                  type="number"
+                  name="y"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <label for="z" class="form-label text-light">Z:</label>
+                <input
+                  type="number"
+                  name="z"
+                  class="form-control"
+                  min="0"
+                  step="any"
+                  required
+                />
+              </div>
+            </div>
+            
+            <br />
+            <button type="submit" class="btn btn-success btn-lg col-12">
+              Predict
+            </button>
+          </form>
+        </div>
+        <div class="col-4">
+          {% if prediction_test %}
+          <div class="card bg-primary border border-danger">
+            <div class="card-body">
+              <h5 class="card-title">Prediction Result</h5>
+
+              <p
+                class="card-text display-6 bg-success p-3 mb-2 rounded text-white"
+              >
+                Diamond Price: ${{prediction_test }}
+                <!-- The predicted house value is ${{ prediction_test }} -->
+              </p>
+            </div>
+            <div
+              class="card-footer text-body-secondary card-subtitle text-body-secondary"
+            >
+              NOTE: Actual Price will be within $538 on average.
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
