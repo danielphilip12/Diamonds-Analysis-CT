@@ -27,18 +27,19 @@ This dataset did not include any missing values, nor any worrisome outliers. How
 
 ### Key Visualizations
 
-#### Visualization 1: [Title]
-[Description and interpretation of the first visualization.]
+#### Visualization 1: [Correlation between Carat and Price Grouped by Cut]
+This scatterplot shows the relationship between carat and price, and the colors group it by the type of cut. We can see that carat and price are strongly related, but the distribution of different cuts do not seem to be as affected by price, as the groups spread out all over the scatterplot.
 
 ![Visualization 1](./images/carat_price_cut.png)
 
-#### Visualization 2: [Title]
-[Description and interpretation of the first visualization.]
+#### Visualization 2: [Distribution of Price, Grouped by Clarity]
+The below kdeplot shows the distribuiton of the price by the clarity of the diamond.
 
+At first glance, it appears that most of the diamonds are of the clarity VS2, but upon closer inspection, we see a smaller, wide peak for SI1, showing that this clarity is the most common. VS2 is only more common among the lower prices (0-~4000). We also see that the clarity I1 has the lowest probability, having a very small peak and a broad width.
 ![Visualization 2](./images/price_kde.png)
 
-#### Visualization 3: [Title]
-[Description and interpretation of the second visualization.]
+#### Visualization 3: [Average Price by Cut and Color]
+The below heatmap shows the average price for each combonation of Color and Cut. We see that the J-Premium has the highest average price (`$6,287`), while E-Ideal has the lowest average price (`$2,601`). This could indicate that the color has more of an affect on price than the cut does.
 
 ![Visualization 3](./images/price_cut_color.png)
 
@@ -71,10 +72,4 @@ The RMSE scores tell us how much, on average, the predicted prices differ from t
 Unfortunately, while the Random Forest model performs better, the resulting model is too large for GitHub to store, so the flask app within this repository utilizes the KNN model. 
 
 ## Additional Information
-Include any additional information, references, or resources that might be relevant for understanding the analysis.
-
----
-
-Feel free to replace the placeholders with your actual content. Additionally, if you have images for your visualizations, make sure to replace the placeholder paths with the correct file paths or URLs.
-
-Once you've filled in the content, save the file with a `.md` extension (e.g., `README.md`). You can use this Markdown file on platforms like GitHub to provide a well-structured README for your analysis.
+Dataset comes from [Kaggle](https://www.kaggle.com/datasets/shivam2503/diamonds)
